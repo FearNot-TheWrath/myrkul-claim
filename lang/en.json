@@ -1,0 +1,234 @@
+{
+  "MYRKUL": {
+    "ModuleName": "Myrkul's Claim",
+    "ModuleDescription": "A soul-tracking system for Paladins who have made a pact with Myrkul",
+    
+    "Widget": {
+      "Title": "Myrkul's Claim"
+    },
+    
+    "GMPanel": {
+      "Title": "Myrkul's Claim - GM Panel",
+      "PactActor": "Pact-Bound Actor",
+      "SelectPactActor": "Select Pact Actor",
+      "NoPactActor": "No pact actor selected",
+      "PactActorChanged": "Pact actor updated",
+      "PactEnabled": "Pact enabled",
+      "PactDisabled": "Pact disabled",
+      "PactReset": "Pact has been reset",
+      "LogExported": "Activity log exported successfully",
+      "SoulManagement": "Soul Management",
+      "PactSettings": "Pact Settings",
+      "ModuleSettings": "Module Settings",
+      "Integrations": "Module Integrations",
+      "Utilities": "Utilities"
+    },
+    
+    "Settings": {
+      "PactActorId": {
+        "Name": "Pact-Bound Actor",
+        "Hint": "The actor who has made the pact with Myrkul"
+      },
+      "KillDetectionMode": {
+        "Name": "Kill Detection Mode",
+        "Hint": "How to detect when souls should be claimed",
+        "Midi": "Midi-QOL Workflow",
+        "HP0": "HP Tracking",
+        "Manual": "Manual Only"
+      },
+      "AnnounceClaims": {
+        "Name": "Announce Soul Claims",
+        "Hint": "Who should see soul claim messages",
+        "GM": "GM Only",
+        "Party": "Party Members",
+        "Off": "No Announcements"
+      },
+      "FXPreset": {
+        "Name": "Visual Effects Preset",
+        "Hint": "Style of visual effects to use",
+        "None": "No Effects",
+        "MistPulse": "Mist and Pulse",
+        "SoulWail": "Soul Wail"
+      }
+    },
+    
+    "Boons": {
+      "darkBoon": {
+        "Name": "Dark Boon",
+        "Description": "Gain temporary hit points equal to your Paladin level",
+        "Applied": "{actorName} draws upon dark power, gaining {tempHP} temporary hit points",
+        "Notification": "You gain {tempHP} temporary hit points from Myrkul's dark blessing",
+        "Tooltip": "Spend 1 Soul Fragment to gain temp HP equal to Paladin level"
+      },
+      "whispers": {
+        "Name": "Whispers of Death",
+        "Description": "Your next weapon attack deals an additional 1d4 necrotic damage",
+        "Applied": "{actorName}'s weapon is shrouded in deathly whispers",
+        "Notification": "Your next attack will deal additional necrotic damage",
+        "Tooltip": "Spend 1 Soul Fragment to add 1d4 necrotic damage to your next attack"
+      },
+      "focus": {
+        "Name": "Reaper's Focus",
+        "Description": "Gain advantage on your next saving throw against fear, charm, or necrotic damage",
+        "Applied": "{actorName} is shielded by the Reaper's unwavering focus",
+        "Notification": "You have advantage on saves against fear, charm, and necrotic damage",
+        "Tooltip": "Spend 1 Soul Fragment for advantage on saves vs fear, charm, or necrotic"
+      }
+    },
+    
+    "Burden": {
+      "DawnCheck": "Burden of Souls - Dawn Check",
+      "SaveRoll": "Wisdom Saving Throw (DC {dc})",
+      "Success": "{actorName} resists the burden of souls (rolled {roll} vs DC {dc})",
+      "Failure": "{actorName} succumbs to the burden of souls (rolled {roll} vs DC {dc})",
+      "CriticalFailure": "{actorName} is overwhelmed by the burden of souls! (rolled {roll} vs DC {dc})",
+      "ManualTrigger": "Dawn burden check triggered manually",
+      "IntrusiveWhisper": "Intrusive Whisper",
+      "SocialDisadvantage": {
+        "Name": "Burden of Souls",
+        "Description": "The weight of claimed souls makes social interaction difficult"
+      }
+    },
+    
+    "Whispers": {
+      "Base": {
+        "1": "The souls whisper of their former lives, urging you to remember their names...",
+        "2": "You feel the cold touch of the grave upon your shoulder...",
+        "3": "Myrkul's presence grows stronger with each soul you claim...",
+        "4": "The line between life and death blurs in your vision...",
+        "5": "You hear the distant tolling of funeral bells..."
+      },
+      "Intense": {
+        "1": "The souls SCREAM for release, their voices drowning out your thoughts!",
+        "2": "Myrkul's icy grip tightens around your heart, claiming more of your humanity!",
+        "3": "You see the faces of the dead in every shadow, their eyes accusing!",
+        "4": "Death calls to you with increasing urgency - will you answer?"
+      }
+    },
+    
+    "Chat": {
+      "SoulClaimed": "{actorName} claims the soul of {targetName}! Souls: {souls}/{cap}",
+      "SoulOverflow": "{actorName} attempts to claim {targetName}'s soul, but it slips away coldly. The vessel is full. ({souls}/{cap})",
+      "SoulClaimFlavor": "Soul Claimed"
+    },
+    
+    "Commands": {
+      "Help": "<h3>Myrkul's Claim Commands</h3><p><strong>!soul add [n]</strong> - Add souls (default 1)<br><strong>!soul spend &lt;type&gt;</strong> - Spend soul for boon (boon/whispers/focus)<br><strong>!soul set &lt;n&gt;</strong> - Set soul count<br><strong>!soul clear</strong> - Clear all souls<br><strong>!soul report</strong> - Show current status</p>",
+      "InvalidNumber": "Please provide a valid number",
+      "SoulsSet": "Soul count set to {amount}",
+      "SoulsCleared": "All souls have been cleared",
+      "StatusReport": "<strong>{actorName}</strong><br>Souls: {souls}<br>Capacity: {cap}<br>Total Corruption: {corruption}"
+    },
+    
+    "Effects": {
+      "SoulClaimed": "A soul has been claimed from {target}",
+      "BoonActivated": "{boon} has been activated",
+      "BurdenNormal": "The burden of souls weighs heavy",
+      "BurdenCritical": "The burden of souls is overwhelming!",
+      "TestPlayed": "Test effect '{type}' played"
+    },
+    
+    "Errors": {
+      "NoPactActor": "No pact actor has been configured",
+      "PactNotEnabled": "The pact is not currently enabled for this actor",
+      "NoPermission": "You do not have permission to modify souls",
+      "GMOnly": "This action is only available to the GM",
+      "NoSouls": "No soul fragments available to spend",
+      "InvalidBoonType": "Invalid boon type specified",
+      "BoonCooldown": "{boon} is still on cooldown ({time} remaining)"
+    },
+    
+    "Dialog": {
+      "ClearSouls": {
+        "Title": "Clear Souls",
+        "Content": "Are you sure you want to clear all soul fragments? This cannot be undone."
+      },
+      "SetSouls": {
+        "Title": "Set Soul Count",
+        "Label": "Number of souls:",
+        "Set": "Set"
+      },
+      "ResetPact": {
+        "Title": "Reset Pact",
+        "Content": "Are you sure you want to completely reset the pact? This will clear all souls, corruption, and effects. This cannot be undone."
+      },
+      "Cancel": "Cancel",
+      "Close": "Close"
+    },
+    
+    "Context": {
+      "AddSoul": "Add Soul Fragment",
+      "SetSouls": "Set Soul Count",
+      "ViewLog": "View Activity Log",
+      "OpenGMPanel": "Open GM Panel"
+    },
+    
+    "Log": {
+      "Title": "Soul Activity Log",
+      "TitleFor": "Soul Activity Log - {name}",
+      "Time": "Time",
+      "Type": "Type",
+      "Target": "Target",
+      "Souls": "Souls",
+      "Empty": "No activity recorded",
+      "Export": "Export CSV",
+      "Exported": "Activity log exported successfully",
+      "Type": {
+        "award": "Soul Claimed",
+        "spend": "Boon Used",
+        "set": "Manual Set",
+        "clear": "Cleared",
+        "burden": "Burden Check"
+      }
+    },
+    
+    "Sheet": {
+      "Title": "Myrkul's Claim",
+      "PactEnabled": "Pact with Myrkul enabled",
+      "PactDisabled": "Pact with Myrkul disabled",
+      "Enable": "Enable Pact",
+      "Disable": "Disable Pact",
+      "AddSoul": "Add Soul",
+      "ClearSouls": "Clear",
+      "SpendBoon": "Dark Boon",
+      "SpendWhispers": "Whispers",
+      "SpendFocus": "Focus"
+    },
+    
+    "Tooltips": {
+      "SoulCounter": "Right-click for options. Current soul fragments and capacity.",
+      "Corruption": "Total souls ever claimed. Click for corruption details.",
+      "EnabledToggle": "Enable or disable the pact with Myrkul",
+      "BoonCooldown": "This boon is on cooldown"
+    },
+    
+    "Corruption": {
+      "Total": "Total Corruption",
+      "Level": "Corruption Level",
+      "Minimal": "Minimal",
+      "Low": "Low",
+      "Moderate": "Moderate", 
+      "High": "High",
+      "Extreme": "Extreme",
+      "Info": "Corruption Information",
+      "Description": "Corruption represents the total number of souls ever claimed through your pact with Myrkul. Higher corruption may lead to more frequent and intense burden effects.",
+      "Warning": "⚠️ Your corruption level is affecting your character's behavior and mental state.",
+      "Thresholds": "Corruption Thresholds",
+      "Threshold5": "5+ - Occasional intrusive whispers",
+      "Threshold10": "10+ - More frequent whispers and social difficulties",
+      "Threshold25": "25+ - Significant mental strain and supernatural awareness",
+      "Threshold50": "50+ - Overwhelming influence of death and the undead"
+    },
+    
+    "Duration": {
+      "None": "None",
+      "Seconds": "{seconds}s",
+      "Minutes": "{minutes}m",
+      "HoursMinutes": "{hours}h {minutes}m"
+    },
+    
+    "Manual": {
+      "Target": "Manual"
+    }
+  }
+}

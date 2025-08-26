@@ -1,0 +1,81 @@
+{
+  "id": "myrkul-claim",
+  "title": "Myrkul's Claim",
+  "description": "A soul-tracking system for Paladins who have made a pact with Myrkul. Track Soul Fragments, spend them for dark boons, and manage the burden of corruption.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Myrkul's Claim Module",
+      "discord": "foundry-vtt",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "11.315",
+    "verified": "13.291",
+    "maximum": "13"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ],
+    "modules": [
+      {
+        "id": "midi-qol",
+        "type": "module",
+        "compatibility": {},
+        "reason": "Enhanced kill detection and damage workflows"
+      },
+      {
+        "id": "dae",
+        "type": "module", 
+        "compatibility": {},
+        "reason": "Advanced Active Effects support"
+      },
+      {
+        "id": "itemacro",
+        "type": "module",
+        "compatibility": {},
+        "reason": "Item macro integration for Ring of Myrkul"
+      },
+      {
+        "id": "sequencer",
+        "type": "module",
+        "compatibility": {},
+        "reason": "Visual and audio effects"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/myrkul-claim-fixed-complete.js"
+  ],
+  "styles": [
+    "styles/myrkul-claim.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "myrkul-items",
+      "label": "Myrkul's Claim Items",
+      "path": "packs/myrkul-items.db",
+      "type": "Item",
+      "system": "dnd5e"
+    }
+  ],
+  "socket": true,
+  "manifest": "https://github.com/your-repo/myrkul-claim/releases/latest/download/module.json",
+  "download": "https://github.com/your-repo/myrkul-claim/releases/latest/download/myrkul-claim.zip",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md"
+}
