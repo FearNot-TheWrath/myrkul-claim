@@ -12,8 +12,7 @@
   ],
   "compatibility": {
     "minimum": "11.315",
-    "verified": "13.291",
-    "maximum": "13"
+    "verified": "13.346"
   },
   "relationships": {
     "systems": [
@@ -51,7 +50,7 @@
     ]
   },
   "esmodules": [
-    "scripts/myrkul-claim-fixed-complete.js"
+    "scripts/myrkul-claim-final.js"
   ],
   "styles": [
     "styles/myrkul-claim.css"
@@ -67,14 +66,14 @@
     {
       "name": "myrkul-items",
       "label": "Myrkul's Claim Items",
-      "path": "packs/myrkul-items.db",
+      "path": "packs/myrkul-items",
       "type": "Item",
       "system": "dnd5e"
     }
   ],
   "socket": true,
-  "manifest": "https://github.com/your-repo/myrkul-claim/releases/latest/download/module.json",
-  "download": "https://github.com/your-repo/myrkul-claim/releases/latest/download/myrkul-claim.zip",
+  "manifest": "https://github.com/FearNot-TheWrath/myrkul-claim/releases/latest/download/module.json",
+  "download": "https://github.com/FearNot-TheWrath/myrkul-claim/releases/latest/download/myrkul-claim.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "changelog": "CHANGELOG.md"
